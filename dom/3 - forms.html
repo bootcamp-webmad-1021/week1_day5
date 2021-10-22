@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <h1>Escribe algo:</h1>
+        <input type="text" class="input-value">
+
+        <br><br>
+
+        <button class="showValue">VER VALOR DEL INPUT</button>
+        <p>El valor del input es: <span class="result">?????</span></p>
+
+        <script>
+
+            //seleccionamos el botón de ver valor y le aplicamos una funcion a su onclick
+            document.querySelector('.showValue').onclick = function () {
+
+                //GET del valor del input
+                const input = document.querySelector(".input-value")
+                const inputValue = input.value     // .value returns an input value
+
+                //modificamos el texto del span
+                document.querySelector('.result').textContent = inputValue
+            }
+
+        </script>
+    </body>
+
+</html>

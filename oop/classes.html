@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+            class Player {
+                constructor(username, className) {
+                    this.username = username
+                    this.level = 1
+                    this.items = ["weapon"]
+                    this.className = className
+
+                    this.attacks = {
+                        punch: 100,
+                        kick: 200
+                    }
+                }
+
+                levelUp() {
+                    this.level++
+                }
+
+                buyItem(item) {
+                    this.items.push(item)
+                }
+
+                getNumberOfItems() {
+                    return this.items.length
+                }
+            }
+
+            //INSTANCES - INSTANCIAS - Creación de objetos
+            const player1 = new Player("Virginia", "Wizard")
+            const player2 = new Player("Manu", "Warrior")
+            const player3 = new Player("Raul", "Cleric")
+            const player4 = new Player("Guille", "Bard")
+
+            
+            //CUSTOM METHODS
+            console.log(`Manu es nivel ${player2.level} y no tiene pociones:`, player2)
+            player2.levelUp()
+            player2.buyItem("potion")
+            console.log(`Manu ha subido de nivel al ${player2.level} y se ha comprado una pocion:`, player2)
+
+            const manuTotalItems = player2.getNumberOfItems()
+            console.log(manuTotalItems)
+
+            console.log("El daño de la patada es: ", player2.attacks.kick)
+
+        </script>
+
+
+    </body>
+
+</html>

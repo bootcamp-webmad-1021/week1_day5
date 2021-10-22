@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+
+            //Clase base
+            class Person {
+                constructor(name, age) {
+                    this.name = name
+                    this.age = age
+                    this.isNice = true
+                }
+
+                sayHi() {
+                    console.log("Hola")
+                }
+            }
+
+            //Extensión de la clase base Person
+            class Player extends Person {
+                constructor(name, age, lives, nick) {
+                    super(name, age)
+                    this.lives = lives
+                    this.nick = nick
+                }
+
+                showNick() {
+                    console.log("este es mi nick", this.nick)
+                }
+
+                sayHi() {
+                    console.log("Hola soy un player")
+                }
+            }
+
+
+            const person = new Person("teo", 31)
+            const player = new Player("teo", 31, 5, "er_teo")
+
+            player.sayHi()
+            player.showNick()
+
+
+
+
+            /////////////////////////////////////////////////////////
+            //2ª versión con más herencia, propiedades y métodos. Comentar la parte anterior y descomentar esta.
+
+
+
+
+            // class Player extends Person {
+
+            //     constructor(nameValue, lastNameValue, ageValue, nickValue, livesValue, tokensValue) {
+
+            //         // super() connects to it's parent class constructor() mehtod
+            //         super(nameValue, lastNameValue, ageValue)
+
+            //         this.nick = nickValue
+            //         this.lives = livesValue
+            //         this.tokens = tokensValue
+            //     }
+
+            //     rechargeTokens(value) {
+            //         this.tokens += value
+            //         console.log(`Acabas de recargar ${value} tokens, te quedan ${this.tokens}`)
+            //     }
+
+            //     buyLives(extraLives = 1) {
+
+            //         const totalCost = extraLives * 100
+
+            //         if (this.tokens >= totalCost) {
+            //             this.lives += extraLives
+            //             this.tokens -= totalCost
+            //             console.log(`¡Vidas recargadas! Tienes ${this.lives} vidas y ${this.tokens} tokens.`)
+            //         } else {
+            //             console.log(`No dispones de saldo. Necesitas ${totalCost} y tienes ${this.tokens}`)
+            //         }
+            //     }
+            // }
+
+
+
+            // const player1 = new Player('Raúl', 'Doe', 33, 'Shu Mò_ÓrenIkOh_86', 10, 1000)
+
+            // player1.buyLives(95)
+            // player1.rechargeTokens(10000)
+            // player1.buyLives(95)
+
+
+            // player1.presentYourself()
+
+
+
+
+
+
+            // console.log('----------')
+
+
+
+
+
+            // class Witch extends Player {
+
+            //     constructor(nameValue, lastNameValue, ageValue, nickValue, livesValue, tokensValue, powerValue) {
+
+            //         super(nameValue, lastNameValue, ageValue, nickValue, livesValue, tokensValue)
+            //         this.power = powerValue
+            //     }
+
+            //     makeSpell() {
+            //         console.log(`¡Oh, no! La bruja ${this.nick} (que en realidad se llama ${this.name}) te lanzó un hechizo de poder ${this.power}`)
+            //     }
+
+
+            // }
+
+
+
+
+            // const witch = new Witch('Charini', 'Sol', 33, 'Sabrina', 10, 1000, 95)
+
+
+            // witch.makeSpell()
+            // witch.buyLives(40)
+            // witch.presentYourself()
+
+
+
+
+
+
+
+            // console.log('----------')
+
+
+
+
+
+
+
+            // class Gnome extends Player {
+
+            //     constructor(nameValue, lastNameValue, ageValue, nickValue, livesValue, tokensValue, accountValue, spitPowerValue) {
+
+            //         super(nameValue, lastNameValue, ageValue, nickValue, livesValue, tokensValue, accountValue)
+            //         this.spitPower = spitPowerValue
+            //     }
+
+            //     spit() {
+            //         console.log(`¡Oh, no! El gnomo ${this.nick} te esupió. Qué guarro...`)
+            //     }
+            // }
+
+
+            // const gnome = new Gnome('Teo', 'Lopez', 33, 'David el Gnomo', 5, 300, 3)
+
+            // gnome.buyLives()
+            // gnome.spit()
+            // gnome.presentYourself()
+            // gnome.rechargeTokens(1000000)
+            // gnome.buyLives(70)
+
+
+            // gnome.makeSpell()
+
+
+        </script>
+    </body>
+
+</html>

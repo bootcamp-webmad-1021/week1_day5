@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Al evento eso le da igual <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+        <h6>Yo no soy un parrafo, así que no me cambio</h6>
+
+        <script>
+
+            //Seleccionamos todos los parrafos
+            const allParagraphs = document.querySelectorAll("p")
+
+            allParagraphs.forEach(function (eachParagraph) {
+
+                //les aplicamos un onclick a cada uno de ellos
+                // El objeto event puede capturarse en las funciones que se invocan a raíz de un evento 
+                // Su propiedad .currentTarget hace referencia al objeto en cuestión que ha desencadenado la función en cada invocación
+                eachParagraph.onclick = function (event) { //este event es "automático"
+                    console.log("Hola soy un parrafo")
+                    //event.currentTarget es el parrafo clickado
+                    event.currentTarget.style.backgroundColor = "red"
+                }
+
+            })
+
+
+        </script>
+    </body>
+
+</html>

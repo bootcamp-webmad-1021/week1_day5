@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <script>
+
+            //OBJECT LITERAL
+
+            const person = {
+                name: "Teo",
+                age: 31,
+                country: "Spain",
+                children: 0,
+                hasCar: false,
+                celiac: false,
+                location: undefined,
+                hobbies: ["role playing", "anime", "videogames"],
+
+                subscriptions: [
+                    {
+                        name: "Netflix",
+                        price: 18
+                    },
+                    {
+                        name: "HBO",
+                        price: 21
+                    },
+                    {
+                        name: "Disney Plus",
+                        price: 12
+                    }
+                ],
+
+                sayHi: function () {
+                    console.log(`Hola soy ${this.name}, encantado de conocerte :)`)
+                },
+
+                showSubscription: function () {
+                    console.log("Name: ", this.subscriptions[0].name, "Price", this.subscriptions[0].price)
+                },
+
+                increaseAge: function () {
+                    this.age++
+                    console.log("Mi edad ahora es: ", this.age)
+                },
+
+                buyCar: function () {
+                    this.hasCar = true
+                    console.log('Compro un coche!!')
+                }
+            }
+
+
+
+            //GETTER
+            // console.log(person.name)
+            // console.log(person.age)
+            // console.log(person['country'])
+
+            // console.log("Esta es su lista de hobbies: ", person.hobbies)
+
+            //SETTER
+            // person.name = "Teodoro"
+            // console.log("El nombre ahora es: ", person.name)
+
+            // person["age"] = person.age + 1
+            // console.log("Ahora tiene años:",  person["age"])
+
+            // console.log("El primer hobby es: " , person.hobbies[0])
+
+
+            //OBJECT EXTENSION
+            // person.isInRelationship = true
+
+            // console.log(person)
+
+
+            // EXTRA OPERATIONS
+
+
+            //Accediendo a propiedades de un array de obj
+            console.log(`La primera subscripción de ${person.name} es ${person.subscriptions[0].name} y tiene un coste de ${person.subscriptions[0].price}`)
+
+
+            //Iterando un array del objeto person
+
+
+            // .forEach() es un método que recibe como argumento una función, con un parámetro por defecto: cada elemento iterado del array
+            // for(let i = 0; i < person.hobbies.length; i++) {
+            //     console.log(person.hobbies[i])
+            // }
+
+            //Guardando el array en una constante
+            // const arr = person.hobbies
+
+            // arr.forEach(function (eachHobby) {
+            //     console.log("holi", eachHobby)
+            // })
+
+            //Sin guardar el array en una constante
+            person.hobbies.forEach((eachHobby) => {
+                console.log("Cada hobby: ", eachHobby)
+            })
+
+
+            //Pusheando y haciendo pop en el array
+            person.hobbies.push("climbing")
+
+            console.log("Hemos pusheado un nuevo hobby", person.hobbies)
+
+            person.hobbies.pop()
+
+            console.log("Hemos sacado el hobby del array", person.hobbies)
+
+            //Modificando una propiedad de un objeto dentro de un array
+            person.subscriptions[0].price += 10
+
+            console.log(`El precio de Netflix ahora es: ${person.subscriptions[0].price} euros. Que barbaridad`)
+
+            // CUSTOM METHODS
+            person.sayHi()
+            console.log(person.subscriptions)
+            person.showSubscription()
+            person.increaseAge()
+
+            console.log("Aun no tengo coche", person.hasCar)
+            person.buyCar()
+            console.log("Ahora sí", person.hasCar)
+
+
+            // ADDITIONAL INFO
+            /*
+
+            // in operator
+            console.log(`¿Tiene la persona propiedad "height"? ${'height' in person}`)
+            console.log(`¿Tiene la persona propiedad "cars"? ${'cars' in person}`)
+
+            // properties iterator
+            const personKeys = Object.keys(person)
+            console.log(`El array de propiedades del objeto es: ${personKeys}`)
+
+            // values iterator
+            const personValues = Object.values(person)
+            console.log(`El array de valores del objeto es: ${personValues}`)
+            */
+
+
+
+        </script>
+    </body>
+
+</html>
